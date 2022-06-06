@@ -1,0 +1,6 @@
+POST http://localhost:8082/buy/1
+Content-Type: application/json
+
+1
+
+###

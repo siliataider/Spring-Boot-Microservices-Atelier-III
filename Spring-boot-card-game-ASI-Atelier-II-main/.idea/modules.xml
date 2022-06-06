@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api/DTO.iml" filepath="$PROJECT_DIR$/api/DTO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Card/SPWebApp.iml" filepath="$PROJECT_DIR$/Card/SPWebApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SPWebAppUser/SPWebAppUser.iml" filepath="$PROJECT_DIR$/SPWebAppUser/SPWebAppUser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Spring-boot-card-game-ASI-Atelier-II-main.iml" filepath="$PROJECT_DIR$/.idea/Spring-boot-card-game-ASI-Atelier-II-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Market/market.iml" filepath="$PROJECT_DIR$/Market/market.iml" />
+    </modules>
+  </component>
+</project>

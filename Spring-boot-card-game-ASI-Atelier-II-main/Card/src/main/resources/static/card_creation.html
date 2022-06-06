@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add Card</title>
+</head>
+<body>
+    <script src="./js/addcard.js"></script>
+    <form id="formCard">
+        <div class="input_name">
+            <label for="Name">Name : </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="input_desc">
+            <label for="desc">Description : </label>
+            <input type="text" name="description" id="desc" required>
+        </div>
+        <div class="input_img">
+            <label for="img">Image URL : </label>
+            <input type="url" name="img_src" id="img">
+        </div>
+        <div class="input_family">
+            <label for="family">Family : </label>
+            <select id="family" name="family_name">
+                <option value="htf">HTF</option>
+                <option value="michel">Super Michel</option>
+            </select>
+        </div>
+        <div class="input_affinity">
+            <label for="affinity">Affinity : </label>
+            <select id="affinity" name="affinity">
+                <option value="feu">Feu</option>
+                <option value="glace">Glace</option>
+            </select>    
+        </div>
+        <div class="input_hp">
+            <label for="hp">HP : </label>
+            <input type="range" min="1" max="20" id="range_hp" name="hp">
+        </div>
+        <div class="input_energy">
+            <label for="energy">Energy : </label>
+            <input type="range" min="1" max="10" id="range_energy" name="energy">
+        </div>
+        <div class="input_attack">
+            <label for="attack">Attack : </label>
+            <input type="range" min="1" max="10" id="range_attack" name="attack">
+        </div>
+        <div class="input_defence">
+            <label for="defence">Defence : </label>
+            <input type="range" min="1" max="10" id="range_defence" name="defense">
+        </div>
+        <div class="button_submit">
+            <input type="button" onclick="handleSubmit()" value="OK">
+        </div>
+        <div class="button_cancel">
+            <input type="reset" value="Cancel">
+        </div>
+        <div class="button_nav">
+            <input type="button" value="card" onclick="window.location='card.html'">
+        </div>
+    </form>
+</body>
+</html>

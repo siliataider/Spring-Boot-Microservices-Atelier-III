@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SPWebAppUser</a> &gt; <a href="index.source.html" class="el_package">com.sp.service</a> &gt; <span class="el_source">UserService.java</span></div><h1>UserService.java</h1><pre class="source lang-java linenums">package com.sp.service;
+
+import java.util.*;
+
+
+import com.sp.client.CardClient;
+import com.sp.dto.LoginDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.stereotype.Service;
+
+import com.sp.exception.FunctionnalException;
+import com.sp.model.User;
+import com.sp.repository.UserRepository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+<span class="nc" id="L18">public class UserService {</span>
+
+    @Autowired
+    UserRepository uRepository;
+
+    @Autowired
+    private JwtTokenService jwtTokenService;
+
+    @Autowired
+    private CardClient cardClient;
+
+   @Transactional
+    public User addUser(User user) {
+<span class="nc" id="L31">        user.setMoney(5000);</span>
+<span class="nc" id="L32">        User createdUser = uRepository.save(user);</span>
+<span class="nc" id="L33">        this.cardClient.gatUserRandomCards(createdUser.getId());</span>
+<span class="nc" id="L34">        return user;</span>
+    }
+
+    public User getUser(int id) {
+<span class="nc" id="L38">        Optional&lt;User&gt; uOpt = uRepository.findById(id);</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        if (uOpt.isPresent()) {</span>
+<span class="nc" id="L40">            return uOpt.get();</span>
+        } else {
+<span class="nc" id="L42">            return null;</span>
+        }
+    }
+
+    public User getUserBySurname(String surname) {
+<span class="nc" id="L47">        User u = uRepository.findBySurname(surname);</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (Objects.isNull(u)) {</span>
+<span class="nc" id="L49">            return null;</span>
+        } else {
+<span class="nc" id="L51">            return u;</span>
+        }
+    }
+
+    public List&lt;User&gt; getUsers() {
+<span class="nc" id="L56">        return (List&lt;User&gt;) uRepository.findAll();</span>
+    }
+
+    public String checkUser(LoginDto user) throws FunctionnalException {
+
+<span class="nc" id="L61">        User u = uRepository.findBySurname(user.getUsername());</span>
+
+<span class="nc bnc" id="L63" title="All 4 branches missed.">        if (Objects.isNull(u) || (!user.getPassword().equals(u.getPassword()))) {</span>
+<span class="nc" id="L64">            throw new FunctionnalException(&quot;utilisateur n existe pas&quot;);</span>
+        }
+
+<span class="nc" id="L67">        return jwtTokenService.generateToken(u);</span>
+
+
+    }
+
+    public void buy(int id, int amount) {
+<span class="nc" id="L73">        uRepository.findById(id).ifPresent(user -&gt;</span>
+<span class="nc" id="L74">                user.setMoney(user.getMoney() - amount));</span>
+<span class="nc" id="L75">    }</span>
+
+    public void sell(int id, int amount)  {
+<span class="nc" id="L78">        uRepository.findById(id).ifPresent( user -&gt;</span>
+<span class="nc" id="L79">        user.setMoney(user.getMoney() + amount));</span>
+<span class="nc" id="L80">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

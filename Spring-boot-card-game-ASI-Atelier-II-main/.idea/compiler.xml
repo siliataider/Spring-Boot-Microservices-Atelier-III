@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="market" />
+        <module name="SPWebAppUser" />
+        <module name="SPWebApp" />
+        <module name="DTO" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api" target="1.8" />
+      <module name="Card" target="1.8" />
+      <module name="DTO" target="9" />
+      <module name="market" target="1.8" />
+      <module name="Spring-boot-card-game-ASI-Atelier-II-main" target="1.8" />
+      <module name="SPWebApp" target="1.8" />
+      <module name="SPWebApp (1)" target="1.8" />
+      <module name="SPWebAppUser" target="9" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Card" options="-parameters" />
+      <module name="DTO" options="-parameters" />
+      <module name="SPWebApp" options="-parameters" />
+      <module name="SPWebApp (1)" options="-parameters" />
+      <module name="SPWebAppUser" options="-parameters" />
+      <module name="Spring-boot-card-game-ASI-Atelier-II-main" options="-parameters" />
+      <module name="api" options="-parameters" />
+      <module name="market" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+docker ps
+docker exec -it db7b6e222655 bash
+su postgres && psql && create database test;
+psql
+create DATABASE test

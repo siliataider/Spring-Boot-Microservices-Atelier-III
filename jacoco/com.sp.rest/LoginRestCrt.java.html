@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoginRestCrt.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SPWebAppUser</a> &gt; <a href="index.source.html" class="el_package">com.sp.rest</a> &gt; <span class="el_source">LoginRestCrt.java</span></div><h1>LoginRestCrt.java</h1><pre class="source lang-java linenums">package com.sp.rest;
+
+import com.sp.dto.LoginDto;
+import com.sp.exception.FunctionnalException;
+import com.sp.model.User;
+import com.sp.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin(origins = {&quot;http://localhost:8083&quot;, &quot;http://127.0.0.1:8083&quot;})
+<span class="nc" id="L16">public class LoginRestCrt {</span>
+
+    @Autowired
+    private UserService uService;
+
+    @RequestMapping(method= RequestMethod.POST, value = &quot;/login&quot;)
+    public String checkUser(@RequestBody LoginDto user) {
+        try {
+<span class="nc" id="L24">            return uService.checkUser(user);</span>
+<span class="nc" id="L25">        } catch (FunctionnalException e) {</span>
+<span class="nc" id="L26">            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage());</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
