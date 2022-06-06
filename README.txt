@@ -9,6 +9,10 @@ Membres de l'équipe
 -   *BOITEUX Baptiste*
 -   *MESSIE Louis*
 
+Lien de la Vidéo de présentation :
+===================================================
+https://youtu.be/DVqqUt6DV7M
+
 Elements du cahier des charges réalisés par membre:
 ===================================================
 
