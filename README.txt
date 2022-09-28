@@ -1,17 +1,16 @@
-Compte Rendu Spring-Boot-Microservices-Junit-Mockito-Unit-Testing-Atelier-III
-=============================================================================
+# Compte Rendu Spring-Boot-Microservices-Junit-Mockito-Unit-Testing-Atelier-III
 
-Membres de l'équipe
+## Demo video  :
+===================================================
+https://youtu.be/DVqqUt6DV7M
+
+## Membres de l'équipe
 ===================
 
 -   *TAIDER Silia*
 -   *BEN SALAH Mariem*
 -   *BOITEUX Baptiste*
 -   *MESSIE Louis*
-
-Lien de la Vidéo de présentation :
-===================================================
-https://youtu.be/DVqqUt6DV7M
 
 Elements du cahier des charges réalisés par membre:
 ===================================================
